@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: vitals-tracker
+    env: java
+    plan: free
+    region: oregon
+    buildCommand: cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests
+    startCommand: java -Dserver.port=$PORT -jar backend/target/vitals-tracker-1.0.0.jar
+    healthCheckPath: /api/vitals
