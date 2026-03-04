@@ -1,10 +1,9 @@
 # Backend
 backend/target/
-backend/.mvn/wrapper/maven-wrapper.jar
-backend/mvnw
-backend/mvnw.cmd
 backend/.idea/
 backend/*.iml
+
+# Don't ignore mvnw - needed for deployment
 
 # Frontend
 frontend/.dart_tool/
