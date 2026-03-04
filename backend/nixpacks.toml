@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["...", "jdk21"]
+
+[phases.build]
+cmds = ["./mvnw clean package -DskipTests"]
+
+[start]
+cmd = "java -Dspring.profiles.active=production -jar target/vitals-tracker-1.0.0.jar"

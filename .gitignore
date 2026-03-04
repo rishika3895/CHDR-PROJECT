@@ -1,0 +1,25 @@
+# Backend
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/mvnw
+backend/mvnw.cmd
+backend/.idea/
+backend/*.iml
+
+# Frontend
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/pubspec.lock
+
+# Don't ignore frontend/build/ - we need it for deployment
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

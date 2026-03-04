@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: vitals-tracker
+  
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:mem:vitalsdb}
+    driver-class-name: ${DATABASE_DRIVER:org.h2.Driver}
+    username: ${DATABASE_USER:sa}
+    password: ${DATABASE_PASSWORD:}
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:create-drop}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.H2Dialect}
+        envers:
+          audit_table_suffix: _AUDIT
+          revision_field_name: REV
+          revision_type_field_name: REVTYPE
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
