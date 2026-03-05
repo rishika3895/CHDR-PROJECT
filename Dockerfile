@@ -14,5 +14,4 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/vitals-tracker-1.0.0.jar app.jar
 EXPOSE 8080
-ENV SPRING_PROFILES_ACTIVE=production
 ENTRYPOINT ["java", "-Dserver.port=${PORT:-8080}", "-jar", "app.jar"]
