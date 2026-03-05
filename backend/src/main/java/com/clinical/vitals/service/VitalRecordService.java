@@ -34,6 +34,19 @@ public class VitalRecordService {
                 .collect(Collectors.toList());
     }
     
+    @Transactional
+    public VitalRecordResponse updateRecord(Long id, VitalRecordRequest request) {
+        VitalRecord record = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Record not found"));
+        
+        record.setSubjectId(request.getSubjectId());
+        record.setHeartRate(request.getHeartRate());
+        record.setBloodPressure(request.getBloodPressure());
+        
+        VitalRecord updated = repository.save(record);
+        return toResponse(updated);
+    }
+    
     private VitalRecordResponse toResponse(VitalRecord record) {
         VitalRecordResponse response = new VitalRecordResponse();
         response.setId(record.getId());

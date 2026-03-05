@@ -30,4 +30,12 @@ public class VitalRecordController {
     public ResponseEntity<List<VitalRecordResponse>> getAllRecords() {
         return ResponseEntity.ok(service.getAllRecords());
     }
+    
+    @PutMapping("/{id}")
+    public ResponseEntity<VitalRecordResponse> updateRecord(
+            @PathVariable Long id,
+            @Valid @RequestBody VitalRecordRequest request) {
+        VitalRecordResponse response = service.updateRecord(id, request);
+        return ResponseEntity.ok(response);
+    }
 }
