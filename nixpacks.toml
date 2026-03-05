@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["jdk21"]
-
-[phases.build]
-cmds = ["cd backend && chmod +x mvnw && ./mvnw clean package -DskipTests"]
-
-[start]
-cmd = "java -Dspring.profiles.active=production -Dserver.port=$PORT -jar backend/target/vitals-tracker-1.0.0.jar"
