@@ -3,7 +3,7 @@
 Full-stack application for clinical vitals entry with automatic audit trail using Hibernate Envers.
 
 ## Live Demo
-🚀 **App URL**: https://vitals-tracker-flxk.onrender.com/api/
+🚀 **App URL**: https://vitals-tracker-flxk.onrender.com/api/index.html
 
 ## Stack
 - **Frontend**: Flutter Web (integrated into backend)
